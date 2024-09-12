@@ -11,11 +11,11 @@ public class RandomNum {
         return random.nextInt(9)+1;
     }
 
-    public List<Integer> create(){
+    public List<Integer> create(int digit){
 
         List<Integer> comNum = new ArrayList<Integer>();
 
-        while(comNum.size()<3){
+        while(comNum.size()<digit){
             int randomNum = randomNum();
 
             if(comNum.contains(randomNum)){

@@ -21,7 +21,7 @@ public class Result {
         } else if (strike == 0) {
             count += 1;
             return ball + "볼";
-        } else if (strike == 3) {
+        } else if (strike == computer.size()) {
             count += 1;
             System.out.println("정답입니다. 축하합니다!");
 

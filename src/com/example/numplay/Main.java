@@ -14,34 +14,43 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         List<Integer> platNum = new ArrayList<>();
 
+        int digit = 3;
         String result = "";
         boolean exit = true;
+        List<Integer> ranNum = randomNum.create(digit);
 
 
         while(exit){
 
             System.out.println("환영합니다! 원하시는 번호를 입력해주세요.");
-            System.out.println("1. 게임 시작하기  2. 게임 기록 보기  3. 종료하기");
+            System.out.println("0.자리수설정 1. 게임 시작하기  2. 게임 기록 보기  3. 종료하기");
             int num = scanner.nextInt();
 
             switch(num) {
+                case 0:
+                    System.out.println("설정하고자 하는 자리수를 입력해주세요.");
+                   digit = scanner.nextInt();
+
+                   ranNum = randomNum.create(digit);
+                   break;
 
                 case 1:
 
-                List<Integer> ranNum = randomNum.create();
+//                List<Integer> ranNum = randomNum.create();
                 System.out.println(ranNum);
-                while (!result.equals("3스트라이크")) {
+
+                while (!result.equals(digit+"스트라이크")) {
 
                     System.out.println("숫자를 입력해주세요.");
                     String input = scanner.next();
 
-                    if (Inputnum.isVaild(input)) {
+                    if (Inputnum.isVaild(input,digit)) {
                         continue;
                     }
                     ;
 
                     result = numResult.result(ranNum, inputnum.playerNumber(input));
-                    if(!result.equals("3스트라이크")){
+                    if(!result.equals(digit+"스트라이크")){
                     System.out.println(result);}
                 }
                 result = "";
