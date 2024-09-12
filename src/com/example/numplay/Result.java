@@ -10,6 +10,7 @@ public class Result {
 
     List<Integer> gameResults = new ArrayList<>();
 
+    // 스트라이크, 볼, 아웃 출력
     public String result(List<Integer> computer, List<Integer> player) {
         int total = compare.total(computer, player);
         int strike = compare.strike(computer, player);
@@ -38,17 +39,22 @@ public class Result {
         return strike + "스트라이크 " + ball + "볼 ";
     }
 
+    // 결과 저장
     private void addResult(int count) {
 
         gameResults.add(count);
 
     }
 
-
+    // 저장된 결과 출력
     public void showResult() {
-        for(int i = 0 ; i < gameResults.size() ; i++) {
-
-            System.out.println((i+1)+"번째 게임 : 시도 횟수 - "+gameResults.get(i));
+        if(gameResults.isEmpty()){
+            System.out.println("기록이 없습니다.");
+        }
+        else{
+            for (int i = 0; i < gameResults.size(); i++) {
+                System.out.println((i + 1) + "번째 게임 : 시도 횟수 - " + gameResults.get(i));
+            }
         }
     }
 }
