@@ -32,7 +32,7 @@ public class Main {
                    digit = scanner.nextInt();
 
                    ranNum = randomNum.create(digit);
-                   break;
+
 
                 case 1:
 
