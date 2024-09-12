@@ -21,6 +21,7 @@ public class Compare {
             if(computer.get(i) == player.get(i)){
                 strike += 1;
             }
+
         }
         return strike;
     }

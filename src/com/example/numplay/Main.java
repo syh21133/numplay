@@ -17,12 +17,18 @@ public class Main {
         String result = "";
 
         List<Integer> ranNum = randomNum.create();
+        System.out.println(ranNum);
         while (!result.equals("3스트라이크")) {
 
             System.out.println("숫자를 입력해주세요.");
             String input = scanner.next();
 
+            if(Inputnum.isVaild(input)){
+                continue;
+            };
+
             result = numResult.result(ranNum, inputnum.playerNumber(input));
+
             System.out.println(result);
         }
 
