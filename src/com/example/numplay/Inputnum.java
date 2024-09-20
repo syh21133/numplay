@@ -17,7 +17,6 @@ public class Inputnum {
 
         // 숫자가 아닐시
         try {
-            Integer.parseInt(input);
 
 
             // 중복숫자 입력시
