@@ -20,18 +20,27 @@ public class Inputnum {
 
 
             // 중복숫자 입력시
-            List<Integer> validNum = new ArrayList<>();
+//            List<Integer> validNum = new ArrayList<>();
+//
+//            for (String number : input.split("")) {
+//                validNum.add(Integer.parseInt(number));
+//            }
+//            for (int i = 0; i < validNum.size(); i++) {
+//                for (int j = 0; j < i; j++) {
+//                    if (validNum.get(j) == validNum.get(i)) {
+//                        i--;
+//                        System.out.println("중복된 숫자입니다.");
+//                        return true;
+//                    }
+//                }
+//            }
 
-            for (String number : input.split("")) {
-                validNum.add(Integer.parseInt(number));
-            }
-            for (int i = 0; i < validNum.size(); i++) {
-                for (int j = 0; j < i; j++) {
-                    if (validNum.get(j) == validNum.get(i)) {
-                        i--;
-                        System.out.println("중복된 숫자입니다.");
-                        return true;
-                    }
+            // 중복 숫자 수정
+            for(int i = 1 ; i<input.length() ; i++) {
+
+                if(input.charAt(i) == input.charAt(i-1)) {
+                    System.out.println("중복된 숫자입니다.");
+                    return true;
                 }
             }
 
