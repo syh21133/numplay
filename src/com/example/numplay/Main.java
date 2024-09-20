@@ -31,14 +31,14 @@ public class Main {
                     System.out.println("설정하고자 하는 자리수를 입력해주세요.");
                     digit = scanner.nextInt();
 
-                    if(digit<3||digit>5){
+                    if (digit < 3 || digit > 5) {
                         System.out.println("자리수를 다시 입력해주세요.(3~5)");
                         digit = 3;
                         continue;
+                    } else {
+                        System.out.println(digit + "자리수 난이도로 설정 되었습니다.");
+                        ranNum = randomNum.create(digit);
                     }
-                    else{
-                        System.out.println(digit+"자리수 난이도로 설정 되었습니다.");
-                        ranNum = randomNum.create(digit);}
 
 
                 case 1:
