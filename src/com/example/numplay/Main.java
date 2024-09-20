@@ -12,7 +12,6 @@ public class Main {
         Result numResult = new Result();
 
         Scanner scanner = new Scanner(System.in);
-        List<Integer> platNum = new ArrayList<>();
 
         int digit = 3;
         String result = "";
@@ -27,16 +26,24 @@ public class Main {
             int num = scanner.nextInt();
 
             switch (num) {
+
                 case 0:
                     System.out.println("설정하고자 하는 자리수를 입력해주세요.");
                     digit = scanner.nextInt();
 
-                    ranNum = randomNum.create(digit);
+                    if(digit<3||digit>5){
+                        System.out.println("자리수를 다시 입력해주세요.(3~5)");
+                        digit = 3;
+                        continue;
+                    }
+                    else{
+                        System.out.println(digit+"자리수 난이도로 설정 되었습니다.");
+                        ranNum = randomNum.create(digit);}
 
 
                 case 1:
 
-
+                    // 정답확인용 출력
                     System.out.println(ranNum);
 
                     while (!result.equals(digit + "스트라이크")) {
